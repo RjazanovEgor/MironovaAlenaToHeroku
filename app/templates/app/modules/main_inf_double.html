@@ -1,0 +1,54 @@
+<div>
+    <style>
+        body1 {
+               display: flex;
+               flex-direction: column;
+               justify-content:  flex-end;
+               margin-left: auto;
+               margin-right: auto;
+               width: 100%;
+               min-width: 200px;
+               height: 100%;
+               min-height: 500px;
+               background-image: url(https://s330man.storage.yandex.net/rdisk/7c3a95a39c34280cbf344b2a56aac6f2ab9321caec1006281ad64aab08571ec6/60e1b475/bZL1XpLj2g4xUFpkiULzlf2dlD3W02EhLGJ7JP_RkjA67bVOmB-IPEhCQrXhsbweD5IIaL8NjP3YtkzDgwuv1w==?uid=1437771935&filename=0-02-05-8bb30f1d28d2413fb8b39eeb2065a263c5dfce939b6c86482499e1340a0b0ddd_175c8d051e7a1d4e.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1437771935&fsize=141767&hid=b596c88a4ef4fea44b60fb04f60332e7&media_type=image&tknv=v2&etag=2021d6f13ff59fd2c6f973eb12e39f95&rtoken=MQeiz9d3sKJN&force_default=yes&ycrid=na-bfb67572332756ed31720bfb4199500b-downloader24h&ts=5c64bfbce4740&s=928d67d54bc52718aca9216eb2b4e9d08d4351e3b74ad08ba016de9f21be8545&pb=U2FsdGVkX18amjV-abLZTGagoQzJd0bgTR7x3MNfsY0ckKKB7JnjAQObRQp0syBscdDa8GfUpadzQCwby5N7eGvED0DMR8ZR3QrQYUGYufo);
+               background-size: cover;
+               }
+        parent1 {
+                 display: flex;
+                 padding: 0px;
+                 margin: 0px;
+                 flex-direction: column;
+
+                 min-width: 200px;
+                 align-items: center;
+                 justify-content:  flex-end;
+                }
+        atom1 {
+               align-self: center;
+               font-family: Open Sans;
+               color: #292929;
+               font-size: 75%;
+               margin: 10px;
+               }
+
+    </style>
+    {% for main_inf in main_inform %}
+
+    <body1 style="flex-wrap: wrap;">
+        <parent1 style="font-weight: bolder; font-size: 150%;
+                        text-align: center; align-content: flex-start">
+            {{ main_inf.name }}
+        </parent1>
+        <parent1 style="align-self :  flex-end; width: 40%; height: 90%;">
+
+            <atom1 style="text-align: justify; justify-content:  flex-end;align-self :  center;">
+                {{ main_inf.description }}
+
+                <br> <br>
+                <br> <br>
+
+            </atom1>
+        </parent1>
+    </body1>
+    {% endfor %}
+</div>

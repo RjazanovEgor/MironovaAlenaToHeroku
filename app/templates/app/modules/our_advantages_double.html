@@ -1,0 +1,63 @@
+<div>
+    <style>
+        body4 {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               margin-left: auto;
+               margin-right: auto;
+               width: 100%;
+               min-width: 200px;
+               }
+        parent4 {
+                 display: flex;
+                 padding: 0px;
+                 margin: 0px;
+                 flex-direction: column;
+                 background-color: #fff;
+                 width: 45%;
+                 min-width: 200px;
+                 align-items: center;
+                 justify-content: center;
+                }
+        atom4 {
+               align-self: center;
+               font-family: Open Sans;
+               color: #424242;
+               font-size: 100%;
+               margin: 10px;
+               }
+
+    </style>
+    {% for advantage in our_advantages %}
+    <body4 style="flex-wrap: wrap;">
+        <parent4>
+            <img src='{{ advantage.imageURL }}'
+                width="100%">
+        </parent4>
+
+        <parent4>
+            <atom4 style="font-weight: bolder; font-size: 120%;">
+                <center>
+                    {{ advantage.name }}
+                </center>
+
+            </atom4>
+
+            <atom4 style="text-align: justify">
+                ✔ Мы помогаем решить судебные вопросы своих клиентов на любой стадии –
+                от переговоров до исполнительного производства
+            </atom4>
+
+            <atom4 style="text-align: justify">
+                ✔ К нам обращаются в случаях необходимости отстаивания интересов
+                в судах во всех областях права
+            </atom4>
+
+            <atom4 style="text-align: justify">
+                ✔ Стоимость зависит от сложности дела и обсуждается индивидуально
+            </atom4>
+        </parent4>
+    </body4>
+    {% endfor %}
+</div>
