@@ -1,0 +1,57 @@
+<div>
+    <style>
+        body2 {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               margin-left: auto;
+               margin-right: auto;
+               width: 100%;
+               min-width: 200px;
+               }
+        parent2 {
+                 display: flex;
+                 padding: 0px;
+                 margin: 0px;
+                 flex-direction: column;
+                 background-color: #fff;
+                 width: 45%;
+                 min-width: 200px;
+                 align-items: center;
+                 justify-content: center;
+                }
+        atom2 {
+               align-self: center;
+               font-family: Open Sans;
+               color: #424242;
+               font-size: 75%;
+               margin: 10px;
+               }
+
+    </style>
+    {% for about in about_company %}
+    <body2 style="flex-wrap: wrap;">
+
+
+        <parent2>
+            <atom2 style="font-weight: bolder; font-size: 100%; text-align: center">
+                {{ about.name }}
+            </atom2>
+
+            <atom2 style="text-align: center">
+                {{ about.description }}
+            </atom2>
+            {% for point in about_company_points %}
+            <atom2 style="text-align: justify; font-size: 60%;">
+                <li>{{ point.description }}</li>
+            </atom2>
+            {% endfor %}
+        </parent2>
+
+        <parent2>
+            <img src='{{ about.imageURL }}'
+                width="100%">
+        </parent2>
+    </body2>
+    {% endfor %}
+</div>

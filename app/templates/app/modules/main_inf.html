@@ -1,0 +1,53 @@
+<div>
+    <style>
+        body1 {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               margin-left: auto;
+               margin-right: auto;
+               width: 100%;
+               min-width: 200px;
+               }
+        parent1 {
+                 display: flex;
+                 padding: 0px;
+                 margin: 0px;
+                 flex-direction: column;
+                 background-color: #fff;
+                 width: 45%;
+                 min-width: 200px;
+                 align-items: center;
+                 justify-content: center;
+                }
+        atom1 {
+               align-self: center;
+               font-family: Open Sans;
+               color: #424242;
+               font-size: 75%;
+               margin: 10px;
+               }
+
+    </style>
+    {% for main_inf in main_inform %}
+    <body1 style="flex-wrap: wrap;">
+        <parent1>
+            <img src='{{ main_inf.imageURL }}'
+                width="100%">
+        </parent1>
+
+        <parent1>
+            <atom1 style="font-weight: bolder; font-size: 100%;">
+                <center>
+                    {{ main_inf.name }}
+                </center>
+
+            </atom1>
+
+            <atom1 style="text-align: justify">
+                {{ main_inf.description }}
+            </atom1>
+        </parent1>
+    </body1>
+    {% endfor %}
+</div>

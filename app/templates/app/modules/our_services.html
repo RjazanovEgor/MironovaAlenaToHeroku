@@ -1,0 +1,72 @@
+<div>
+    <style>
+        body3 {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               margin-left: auto;
+               margin-right: auto;
+               width: 100%;
+               min-width: 200px;
+               font-family: Open Sans;
+               color: #424242;
+               }
+        parent3 {
+                 display: flex;
+                 padding: 0px;
+                 margin: 0px;
+                 flex-direction: column;
+                 background-color: #fff;
+                 width: 100%;
+                 min-width: 200px;
+                 margin-top: 10px;
+                }
+        atom3 {
+               font-family: Open Sans;
+               color: #424242;
+               font-size: 70%;
+               margin: 10px;
+               width: 30%;
+               min-width: 200px;
+               }
+
+    </style>
+    {% for service in our_services %}
+    <body3 style="flex-wrap: wrap;">
+        <parent3 style="font-weight: bolder; font-size: 100%; text-align: center">
+                {{ service.name }}
+        </parent3>
+
+        <parent3 style="width: 90%; margin-left: auto; margin-right: auto;
+                        font-weight: bolder; font-size: 75%; text-align: center">
+                {{ service.description }}
+        </parent3>
+
+        <parent3 style="flex-direction: row;">
+            <atom3 style="text-align: justify">
+                <h1 style="text-align: center; font-size: 150%;
+                           font-family: Open Sans; color: #424242;">
+                    {{ service.base_price }}
+                </h1>
+                {{ service.base_description }}
+            </atom3>
+
+            <atom3 style="text-align: justify">
+                <h1 style="text-align: center; font-size: 150%;
+                           font-family: Open Sans; color: #424242;">
+                    {{ service.standard_price }}
+                </h1>
+                {{ service.standard_description }}
+            </atom3>
+
+            <atom3 style="text-align: justify">
+                <h1 style="text-align: center; font-size: 150%;
+                           font-family: Open Sans; color: #424242;">
+                    {{ service.optima_price }}
+                </h1>
+                {{ service.optima_description }}
+            </atom3>
+        </parent3>
+    </body3>
+    {% endfor %}
+</div>

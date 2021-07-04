@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="https://3.downloader.disk.yandex.ru/preview/a59d015f0b1ed50e24c08be60a781b056089ec671fd54381faba24b4c537fed6/inf/bJGhzfZ4VGw08hMxnsw2d7M1X3ExvaWTODqvWboKkud9BWG9_V3rQfr2p8-PIMkfnmzH83SzLYF1-rJ_f_Jo9g%3D%3D?uid=1437771935&filename=2-84x84.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=1437771935&tknv=v2&size=1894x795"  type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
+    <title>Юридическое сопровождение</title>
+    <style>
+        body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                justify-content: center;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+        }
+        part {
+                display: flex;
+                flex-wrap: wrap;
+                min-width: 200px;
+                width: 80%;
+                margin-top: 20px;
+        }
+    </style>
+</head>
+    <body>
+        <!-- Основная информация -->
+        <part>
+            {% include 'app/modules/main_inf.html' %}
+        </part>
+
+        <!-- О нас -->
+        <part>
+            {% include 'app/modules/about_us.html' %}
+        </part>
+
+        <!-- Наши услуги -->
+        <part>
+            {% include 'app/modules/our_services.html' %}
+        </part>
+
+        <!-- Наши преимущества -->
+        <part>
+            {% include 'app/modules/our_advantages.html' %}
+        </part>
+
+        <!-- Контакты-->
+        <part>
+            {% include 'app/modules/contacts.html' %}
+        </part>
+
+        <!-- Форма отправки-->
+        <part>
+            {% include 'app/modules/email.html' %}
+        </part>
+    </body>
+</html>
