@@ -26,37 +26,165 @@
                 width: 80%;
                 margin-top: 20px;
         }
+        #menu__toggle {
+              opacity: 0;
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span {
+              transform: rotate(45deg);
+            }
+            #menu__toggle:checked ~ .menu__btn > span::before {
+              top: 0;
+              transform: rotate(0);
+            }
+            #menu__toggle:checked ~ .menu__btn > span::after {
+              top: 0;
+              transform: rotate(90deg);
+            }
+            #menu__toggle:checked ~ .menu__box {
+              visibility: visible;
+              right: 0;
+            }
+
+            .menu__btn {
+              display: flex;
+              align-items: center;
+              position: relative;
+              top: -10px;
+
+              width: 26px;
+              height: 26px;
+
+              cursor: pointer;
+              z-index: 1;
+            }
+
+            .menu__btn > span,
+            .menu__btn > span::before,
+            .menu__btn > span::after {
+              display: block;
+              position: absolute;
+
+              width: 100%;
+              height: 2px;
+
+              background-color: #616161;
+
+              transition-duration: .25s;
+            }
+            .menu__btn > span::before {
+              content: '';
+              top: -8px;
+            }
+            .menu__btn > span::after {
+              content: '';
+              top: 8px;
+            }
+
+            .menu__box {
+              display: block;
+              position: fixed;
+              visibility: hidden;
+              top: 0;
+              right: -100%;
+
+              width: 300px;
+              height: 100%;
+
+              margin: 0;
+              padding: 80px 0;
+
+              list-style: none;
+              background-color: #BDBDBD;
+              box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+
+              transition-duration: .25s;
+            }
+
+            .menu__item {
+              display: block;
+              padding: 12px 24px;
+
+              color: #333;
+
+              font-family: 'Roboto', sans-serif;
+              font-size: 20px;
+              font-weight: 600;
+
+              text-decoration: none;
+
+              transition-duration: .25s;
+            }
+            .menu__item:hover {
+              background-color: #CFD8DC;
+            }
     </style>
 </head>
     <body>
+        <div style="position: fixed;
+                    right: 30px;
+                    top: 0px">
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="#main">Главная</a></li>
+                    <li><a class="menu__item" href="#about_us">О нас</a></li>
+                    <li><a class="menu__item" href="#about_services">Наши услуги</a></li>
+                    <li><a class="menu__item" href="#about_advantages">Наши преимущества</a></li>
+                    <li><a class="menu__item" href="#clients_about_us">Клиенты о нас</a></li>
+                    <li><a class="menu__item" href="#useful_articles">Полезные статьи</a></li>
+                    <li><a class="menu__item" href="#contacts">Контакты</a></li>
+                    <li><a class="menu__item" href="#write_us">Напишите нам</a></li>
+                </ul>
+            </div>
+        </div>
         <!-- Основная информация -->
         <part>
+            <a name="main"></a>
             {% include 'app/modules/main_inf.html' %}
         </part>
 
         <!-- О нас -->
         <part>
+            <a name="about_us"></a>
             {% include 'app/modules/about_us.html' %}
         </part>
 
         <!-- Наши услуги -->
         <part>
+            <a name="about_services"></a>
             {% include 'app/modules/our_services.html' %}
         </part>
 
         <!-- Наши преимущества -->
         <part>
+            <a name="about_advantages"></a>
             {% include 'app/modules/our_advantages.html' %}
+        </part>
+
+        <!-- Полезныи статьи-->
+        <part  style="align-items: center;
+                      justify-content: center;">
+            <a name="useful_articles"></a>
+            {% include 'app/modules/articles_xl.html' %}
         </part>
 
         <!-- Контакты-->
         <part>
+            <a name="contacts"></a>
             {% include 'app/modules/contacts.html' %}
         </part>
 
         <!-- Форма отправки-->
         <part>
+            <a name="write_us"></a>
             {% include 'app/modules/email.html' %}
         </part>
+
+
     </body>
 </html>
